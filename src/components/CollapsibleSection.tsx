@@ -1,7 +1,27 @@
-import { Link } from 'react-router-dom';
-import { FaAngleDown, FaAngleLeft } from 'react-icons/fa';
+import { FaAngleDown, FaAngleLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const CollapsibleSection = ({ title, icon: Icon, items, toggleState, setToggleState }) => {
+// Define the types for the props of the CollapsibleSection component
+interface Item {
+  label: string;
+  link: string;
+}
+
+interface CollapsibleSectionProps {
+  title: string;
+  icon: React.ComponentType; // This assumes the icon is a React component (e.g., an SVG or font icon)
+  items: Item[];
+  toggleState: boolean;
+  setToggleState: React.Dispatch<React.SetStateAction<boolean>>; // This is for the state setter function
+}
+
+const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
+  title,
+  icon: Icon,
+  items,
+  toggleState,
+  setToggleState,
+}) => {
   return (
     <div className="flex flex-col">
       <div
@@ -30,3 +50,4 @@ const CollapsibleSection = ({ title, icon: Icon, items, toggleState, setToggleSt
 };
 
 export default CollapsibleSection;
+
