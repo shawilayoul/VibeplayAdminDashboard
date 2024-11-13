@@ -41,7 +41,7 @@ const AddEbisode = () => {
     formData.append('title', title);
     formData.append('artist', artist);
     formData.append('description', description);
-    formData.append('duration', Number(duration)); // Convert to number before appending
+    formData.append('duration', String(duration)); // Convert to string
     formData.append('podcastId', podcastId);
     if (url) formData.append('files', url); // Assuming `url` is a file input
     if (artwork) formData.append('files', artwork);

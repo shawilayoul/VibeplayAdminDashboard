@@ -1,5 +1,10 @@
+// Define the expected types for the props
+interface CardProps {
+  title: string;
+  value: string | number;  // `value` can be either a string or a number
+}
 
-const Card = ({ title, value }) => {
+const Card: React.FC<CardProps> = ({ title, value }) => {
   return (
     <div className="p-4 bg-white shadow-md rounded">
       <h3 className="text-lg font-bold">{title}</h3>
@@ -7,6 +12,8 @@ const Card = ({ title, value }) => {
     </div>
   );
 };
+
+
 const Dashboard = () => {
   return (
     <div className="mt-6">
