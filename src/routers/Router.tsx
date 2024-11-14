@@ -31,6 +31,8 @@ import AddTrendingTrack from "../pages/Songs/AddTrendingTrack"
 import ViewTrendingTracks from "../pages/Songs/ViewTrendingTracks"
 import AddTrackToPlaylist from "../pages/Playlists/AddTrackToList"
 import ViewListTracks from "../pages/Playlists/ViewListTracks"
+import ResetPassword from "../pages/RestPassword"
+import ResetPasswordConfirm from "../pages/ResetPasswordConfirm"
 
 const router = createBrowserRouter([
     {
@@ -83,7 +85,15 @@ const router = createBrowserRouter([
 
 
         ]
-    }
+    },
+    {
+        path:"/ResetPassword",
+        element:<ResetPassword/>
+    },
+    {
+        path:"/reset-password/:token",
+        element:<ResetPasswordConfirm/>
+    },
 ])
 
 export default router
