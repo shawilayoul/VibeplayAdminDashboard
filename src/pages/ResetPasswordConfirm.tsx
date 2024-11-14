@@ -1,8 +1,8 @@
 import  { useState } from 'react';
-import { useParams } from 'react-router-dom'; // Using react-router for routing (if you're using it)
+//import { useParams } from 'react-router-dom'; // Using react-router for routing (if you're using it)
 
 const ResetPasswordConfirm = () => {
-  const { token } = useParams();  // Get the reset token from the URL params (assuming the token is in the URL)
+  //const { token } = useParams();  // Get the reset token from the URL params (assuming the token is in the URL)
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState("");
