@@ -1,21 +1,17 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
-    proxy: {
-      // Proxy requests to the target server
-      '/track': {
-        target: 'https://musicserver-h836.onrender.com',
-        changeOrigin: true,
-        // Optional path rewrite if needed
-        // rewrite: (path) => path, // Use this if you want to keep the original path
-      },
+  build: {
+    // Build options
+    outDir: 'build', // You can adjust this if needed
+    rollupOptions: {
+      input: 'index.html', // Ensure the entry point is correct
     },
   },
+  server: {
+    port: 5173, // Adjust if necessary for local development
+  },
 });
-
-
-
-
