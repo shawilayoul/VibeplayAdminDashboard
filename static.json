@@ -11,9 +11,13 @@
         "src": "/(.*)",
         "dest": "/index.html"
       }
+    ],
+    "redirects": [
+      {
+        "source": "/resetpassword",
+        "destination": "/index.html",
+        "status": 301
+      }
     ]
   }
-  
-  
-  
   
