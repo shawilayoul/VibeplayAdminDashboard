@@ -5,8 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Build options
-    outDir: 'build', // You can adjust this if needed
+    // Use the default output directory 'dist'
+    outDir: 'dist', // This is the default, so you can remove the line if you want
     rollupOptions: {
       input: 'index.html', // Ensure the entry point is correct
     },
@@ -15,3 +15,4 @@ export default defineConfig({
     port: 5173, // Adjust if necessary for local development
   },
 });
+
