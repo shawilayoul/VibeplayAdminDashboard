@@ -29,11 +29,12 @@ const Login = () => {
             localStorage.setItem('username', response.data.username);
             localStorage.setItem('email', response.data.userEmail);
             const username = response.data.username;
+            const username2 = localStorage.getItem('username')
 
             // List of admin usernames
             const adminUsernames = ["Aochol", "Shawil Ayoul"];
 
-            if (adminUsernames.includes(username)) {
+            if (adminUsernames.includes(username || username2)) {
                 const redirectTo = state?.from || '/';
                 navigate(redirectTo);  // Redirect after successful login
             } else {
