@@ -50,12 +50,12 @@ const ResetPasswordConfirm = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Reset Your Password</h2>
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96">
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Réinitialisez votre mot de passe</h2>
 
         {success && (
           <div className="bg-green-100 border border-green-500 text-green-800 p-4 mb-4 rounded">
-            Your password has been successfully reset. You can now log in with your new password.
+            Votre mot de passe a été réinitialisé avec succès. Vous pouvez maintenant vous connecter avec votre nouveau mot de passe.
           </div>
         )}
 
@@ -68,7 +68,7 @@ const ResetPasswordConfirm = () => {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="password" className="block text-sm font-semibold text-gray-700">
-              New Password
+              Nouveau mot de passe
             </label>
             <input
               type="password"
@@ -77,14 +77,14 @@ const ResetPasswordConfirm = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="mt-1 p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
-              placeholder="Enter your new password"
+              placeholder="Entrez votre nouveau mot de passe"
               required
             />
           </div>
 
           <div className="mb-4">
             <label htmlFor="confirmPassword" className="block text-sm font-semibold text-gray-700">
-              Confirm New Password
+              Confirmer le nouveau mot de passe
             </label>
             <input
               type="password"
@@ -93,7 +93,7 @@ const ResetPasswordConfirm = () => {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               className="mt-1 p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
-              placeholder="Confirm your new password"
+              placeholder="Confirmez votre nouveau mot de passe"
               required
             />
           </div>
@@ -106,11 +106,12 @@ const ResetPasswordConfirm = () => {
               }`}
             disabled={loading}
           >
-            {loading ? 'Processing...' : 'Reset Password'}
+            {loading ? 'Traitement en cours...' : 'Réinitialiser le mot de passe'}
           </button>
         </form>
       </div>
     </div>
+
   );
 };
 
