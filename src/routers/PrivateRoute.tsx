@@ -6,7 +6,11 @@ const isAuthenticated = () => {
   return localStorage.getItem('authToken') !== null;
 };
 
-const PrivateRoute = ({ element }) => {
+interface PrivateRouteProps {
+    element: React.ReactNode; // This type allows any valid React element
+  }
+  
+  const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
   const location = useLocation();
 
   if (!isAuthenticated()) {
