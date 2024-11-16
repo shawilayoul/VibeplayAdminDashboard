@@ -1,5 +1,5 @@
 import axios from 'axios';
-import  { useState } from 'react';
+import { useState } from 'react';
 
 const ResetPassword = () => {
   const [email, setEmail] = useState('');
@@ -13,12 +13,14 @@ const ResetPassword = () => {
 
     // Example API call (Replace with actual API)
     try {
-      // Simulate an API call to reset the password (replace with actual backend logic)
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate delay
-      await axios.post("https://musicserver-uluy.onrender.com/user/request-password-reset",email)
+      await axios.post(
+        'https://musicserver-uluy.onrender.com/user/request-password-reset',
+        { email: email },
+        { headers: { 'Content-Type': 'application/json' } } // Ensure the header is set
+      );
       setSuccess(true);
       setError("");
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError("An error occurred while resetting your password.");
       setSuccess(false);
@@ -63,11 +65,10 @@ const ResetPassword = () => {
 
           <button
             type="submit"
-            className={`w-full py-3 text-white font-semibold rounded-lg focus:outline-none ${
-              loading
-                ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-indigo-600 hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-600'
-            }`}
+            className={`w-full py-3 text-white font-semibold rounded-lg focus:outline-none ${loading
+              ? 'bg-gray-400 cursor-not-allowed'
+              : 'bg-indigo-600 hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-600'
+              }`}
             disabled={loading}
           >
             {loading ? 'Sending...' : 'Send Reset Link'}

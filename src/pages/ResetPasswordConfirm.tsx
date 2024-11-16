@@ -1,8 +1,9 @@
-import  { useState } from 'react';
-//import { useParams } from 'react-router-dom'; // Using react-router for routing (if you're using it)
+import axios from 'axios';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom'; // Using react-router for routing (if you're using it)
 
 const ResetPasswordConfirm = () => {
-  //const { token } = useParams();  // Get the reset token from the URL params (assuming the token is in the URL)
+  const { token } = useParams();  // Get the reset token from the URL params (assuming the token is in the URL)
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState("");
@@ -29,6 +30,10 @@ const ResetPasswordConfirm = () => {
       // Simulate an API call to reset the password (Replace with actual API call)
       await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate delay
 
+      await axios.post('https://musicserver-uluy.onrender.com/user/password-reset', {
+        resetToken: token,
+        newPassword: password
+      })
       // Assuming the reset token is valid and the password reset is successful
       setSuccess(true);
       setError("");
@@ -36,7 +41,7 @@ const ResetPasswordConfirm = () => {
 
       // Optionally, redirect the user to the login page after successful reset
       //history.push('/login');
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError("Failed to reset password. Please try again.");
       setLoading(false);
@@ -95,11 +100,10 @@ const ResetPasswordConfirm = () => {
 
           <button
             type="submit"
-            className={`w-full py-3 text-white font-semibold rounded-lg focus:outline-none ${
-              loading
-                ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-indigo-600 hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-600'
-            }`}
+            className={`w-full py-3 text-white font-semibold rounded-lg focus:outline-none ${loading
+              ? 'bg-gray-400 cursor-not-allowed'
+              : 'bg-indigo-600 hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-600'
+              }`}
             disabled={loading}
           >
             {loading ? 'Processing...' : 'Reset Password'}
