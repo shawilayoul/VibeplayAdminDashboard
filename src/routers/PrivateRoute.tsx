@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 // This function checks if the user is authenticated
 const isAuthenticated = () => {
   // Check if there's an auth token or user data stored in localStorage
-  return localStorage.getItem('authToken') !== null;
+  return localStorage.getItem('userToken') !== null;
 };
 
 interface PrivateRouteProps {

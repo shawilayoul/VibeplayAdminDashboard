@@ -26,10 +26,11 @@ const Login = () => {
 
             if (response.data.success) {
                 // Assuming the server returns a token or user data, save it to localStorage
-                localStorage.setItem('authToken', response.data.token);  // You can customize this depending on your backend response
+                localStorage.setItem('userToken', response.data.token);  // You can customize this depending on your backend response
                 localStorage.setItem('username', response.data.username);
                 localStorage.setItem('email',response.data.userEmail);
-                navigate('Home');
+
+                navigate('/');
 
             } else {
                 setError('Invalid credentials. Please try again.');
