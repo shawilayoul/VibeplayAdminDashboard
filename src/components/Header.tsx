@@ -4,7 +4,7 @@ import { FaRegMoon, FaRegBell, FaSearch, FaRegUser } from "react-icons/fa";
 const Header = () => {
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
     const [toggleProfile, setToggleProfile] = useState(false);
-
+    const username = localStorage.getItem('username') 
     useEffect(() => {
         // Set up an interval to update the date/time every second
         const interval = setInterval(() => {
@@ -59,6 +59,7 @@ const Header = () => {
                         className="w-9 h-9 rounded-full border-2 border-white cursor-pointer hover:ring-2 hover:ring-blue-300 transition-all"
 
                     />
+                    <div>{username ? <p>username</p>:<p>Guest</p>}</div>
 
                     {toggleProfile && (
                         <div className="absolute right-0 mt-4 w-48 bg-white shadow-lg rounded-md border border-gray-200">

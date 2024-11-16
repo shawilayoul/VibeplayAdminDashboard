@@ -28,10 +28,14 @@ const Login = () => {
             localStorage.setItem('userToken', response.data.token);  // You can customize this depending on your backend response
             localStorage.setItem('username', response.data.username);
             localStorage.setItem('email', response.data.userEmail);
-            const redirectTo = state?.from || '/'; 
+            const username = localStorage.getItem('username')
 
-            // After successful login
-            navigate(redirectTo);
+            if (username == "Aochol" || username == "shawil ayoul") {
+                const redirectTo = state?.from || '/';
+
+                // After successful login
+                navigate(redirectTo);
+            }
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
             setError('An error occurred. Please try again later.');
