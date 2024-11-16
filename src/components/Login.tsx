@@ -29,15 +29,24 @@ const Login = () => {
             localStorage.setItem('username', response.data.username);
             localStorage.setItem('email', response.data.userEmail);
 
-            const username = response.data.username;  // from the response
-            
-            if (username.toLowerCase() === "aochol" || username.toLowerCase() === "shawil ayoul") {
+            const username = response.data.username.trim();  // Trim spaces from the response username
+            const username2 = localStorage.getItem('username')?.trim();  // Trim spaces from localStorage
+
+            console.log('Username from response:', username);
+            console.log('Username from localStorage:', username2);
+
+            // List of admin usernames
+            const adminUsernames = ["Aochol", "Shawil Ayoul"];
+
+            // Check if either 'username' or 'username2' exists in the adminUsernames array (case-insensitive)
+            if (adminUsernames.some(admin => admin.toLowerCase() === username.toLowerCase()) ||
+                adminUsernames.some(admin => admin.toLowerCase() === username2?.toLowerCase())) {
                 const redirectTo = state?.from || '/';
-                navigate(redirectTo);
+                navigate(redirectTo);  // Redirect after successful login
             } else {
-                setError('You are not admin');
+                setError('You are not admin');  // Show error message
             }
-            
+
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
             setError('An error occurred. Please try again later.');
