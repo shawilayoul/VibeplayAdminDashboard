@@ -20,17 +20,14 @@ const ResetPasswordConfirm = () => {
       return;
     }
 
-    if (password.length < 8) {
+    if (password.length < 6) {
       setError('Password must be at least 8 characters long.');
       setLoading(false);
       return;
     }
 
     try {
-      // Simulate an API call to reset the password (Replace with actual API call)
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate delay
-
-      await axios.post('https://musicserver-uluy.onrender.com/user/password-reset', {
+      await axios.post('https://musicserver-uluy.onrender.com/user/reset-password', {
         resetToken: token,
         newPassword: password
       })
