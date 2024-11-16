@@ -32,10 +32,15 @@ const Register = () => {
 
             if (response.data.success) {
                 navigate('/login');
+            } else {
+                setError(response.data.message || 'Registration failed.');
             }
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
-            setError("An error occurred. Please try again later.");
+            if (err.response && err.response.status === 409) {
+                setError('This email or username is already taken.');
+            } else {
+                setError('An error occurred. Please try again later.');
+            }
         } finally {
             setLoading(false);  // Hide loading spinner or button text
         }

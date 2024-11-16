@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
-    //const history = useHistory();
 
     const navigate = useNavigate();
+    const { state } = useLocation()
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
-        e.preventDefault();  // Prevent page reload on form submission
+        e.preventDefault();
 
         if (!email || !password) {
             setError('Both email and password are required.');
@@ -24,18 +24,15 @@ const Login = () => {
         try {
             const response = await axios.post('https://musicserver-uluy.onrender.com/user/login', { email, password });
 
-            if (response.data.success) {
-                // Assuming the server returns a token or user data, save it to localStorage
-                localStorage.setItem('userToken', response.data.token);  // You can customize this depending on your backend response
-                localStorage.setItem('username', response.data.username);
-                localStorage.setItem('email',response.data.userEmail);
+            // Assuming the server returns a token or user data, save it to localStorage
+            localStorage.setItem('userToken', response.data.token);  // You can customize this depending on your backend response
+            localStorage.setItem('username', response.data.username);
+            localStorage.setItem('email', response.data.userEmail);
+            const redirectTo = state?.from || '/'; 
 
-                navigate('/');
-
-            } else {
-                setError('Invalid credentials. Please try again.');
-            }
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            // After successful login
+            navigate(redirectTo);
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
             setError('An error occurred. Please try again later.');
         } finally {
