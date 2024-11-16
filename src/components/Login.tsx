@@ -28,13 +28,16 @@ const Login = () => {
             localStorage.setItem('userToken', response.data.token);  // You can customize this depending on your backend response
             localStorage.setItem('username', response.data.username);
             localStorage.setItem('email', response.data.userEmail);
-            const username = localStorage.getItem('username')
+            const username = response.data.username;
 
-            if (username == "Aochol" || username == "shawil ayoul") {
+            // List of admin usernames
+            const adminUsernames = ["Aochol", "Shawil Ayoul"];
+
+            if (adminUsernames.includes(username)) {
                 const redirectTo = state?.from || '/';
-
-                // After successful login
-                navigate(redirectTo);
+                navigate(redirectTo);  // Redirect after successful login
+            } else {
+                setError('You are not admin');  // Show error message
             }
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {

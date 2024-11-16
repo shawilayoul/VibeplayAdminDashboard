@@ -15,6 +15,13 @@ const Header = () => {
         return () => clearInterval(interval);
     }, []);
 
+
+    const handleLogout =  () => {
+        localStorage.removeItem('userToken'); 
+        localStorage.removeItem('username');
+        localStorage.removeItem('email');
+
+    };
     const formattedDate = currentDateTime.toLocaleString();
     return (
         <header className="flex items-center justify-between p-4 bg-blue-600 z-50 text-white shadow-lg flex-wrap">
@@ -59,13 +66,13 @@ const Header = () => {
                         className="w-9 h-9 rounded-full border-2 border-white cursor-pointer hover:ring-2 hover:ring-blue-300 transition-all"
 
                     />
-                    <div>{username ? <p>username</p>:<p>Guest</p>}</div>
+                    <div>{username ? <p>{username}</p>:<p>Guest</p>}</div>
 
                     {toggleProfile && (
                         <div className="absolute right-0 mt-4 w-48 bg-white shadow-lg rounded-md border border-gray-200">
                             <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
                             <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Settings</a>
-                            <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a>
+                            <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100" onClick={handleLogout}>Logout</a>
                         </div>
                     )}
                 </div>
