@@ -33,67 +33,72 @@ import AddTrackToPlaylist from "../pages/Playlists/AddTrackToList"
 import ViewListTracks from "../pages/Playlists/ViewListTracks"
 import ResetPassword from "../pages/RestPassword"
 import ResetPasswordConfirm from "../pages/ResetPasswordConfirm"
+import Register from "../components/Register"
+import Login from "../components/Login"
+import PrivateRoute from "./PrivateRoute"
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <AppLayOUt />,
         children: [
-            { index: true, element: <Dashboard /> },
-            { path: "/albums", element: <Albums /> },
-            { path: "/albums/add", element: <AddAlbum /> },
-            { path: "/albums/edit", element: <EditAlbum /> },
-            { path: "/albums/view", element: <ViewAlbum /> },
+            { index: true, element: <PrivateRoute element={<Dashboard />} /> },
+            { path: "/albums", element: <PrivateRoute element={<Albums />} /> },
+            { path: "/albums/add", element: <PrivateRoute element={<AddAlbum />} /> },
+            { path: "/albums/edit", element: <PrivateRoute element={<EditAlbum />} /> },
+            { path: "/albums/view", element: <PrivateRoute element={<ViewAlbum />} /> },
 
-            { path: "/artists", element: <Artists /> },
-            { path: "/artists/add", element: <AddArtist /> },
-            { path: "/artists/edit", element: <EditArtist /> },
-            { path: "/artists/view/:id", element: <ViewArtistTracks /> },
-            { path: "/artists/addTrack", element: <AddTrackToArtist /> },
+            { path: "/artists", element: <PrivateRoute element={<Artists />} /> },
+            { path: "/artists/add", element: <PrivateRoute element={<AddArtist />} /> },
+            { path: "/artists/edit", element: <PrivateRoute element={<EditArtist />} /> },
+            { path: "/artists/view/:id", element: <PrivateRoute element={<ViewArtistTracks />} /> },
+            { path: "/artists/addTrack", element: <PrivateRoute element={<AddTrackToArtist />} /> },
 
+            { path: "/podcasts", element: <PrivateRoute element={<Genres />} /> },
+            { path: "/podcast/add", element: <PrivateRoute element={<AddGenre />} /> },
+            { path: "/podcast/edit", element: <PrivateRoute element={<EditGenre />} /> },
+            { path: "/podcast/view/:id", element: <PrivateRoute element={<ViewPodcastLists />} /> },
 
-            { path: "/podcasts", element: <Genres /> },
-            { path: "/podcast/add", element: <AddGenre /> },
-            { path: "/podcast/edit", element: <EditGenre /> },
-            { path: "/podcast/view/:id", element: <ViewPodcastLists /> },
+            { path: "/ebisodes", element: <PrivateRoute element={<Ebisodes />} /> },
+            { path: "/ebisodes/add", element: <PrivateRoute element={<AddEbisode />} /> },
+            { path: "/ebisodes/edit", element: <PrivateRoute element={<EditEbisode />} /> },
 
+            { path: "/playlists", element: <PrivateRoute element={<Playlists />} /> },
+            { path: "/playlists/add", element: <PrivateRoute element={<AddPlaylist />} /> },
+            { path: "/playlists/edit", element: <PrivateRoute element={<EditPlaylist />} /> },
+            { path: "/playlists/view/:id", element: <PrivateRoute element={<ViewPlaylist />} /> },
+            { path: "/lists/view/:id", element: <PrivateRoute element={<ViewListTracks />} /> },
 
-            { path: "/ebisodes", element: <Ebisodes /> },
-            { path: "/ebisodes/add", element: <AddEbisode /> },
-            { path: "/ebisodes/edit", element: <EditEbisode /> },
+            { path: "/playlists/addTrack", element: <PrivateRoute element={<AddTrackToPlaylist />} /> },
 
-            { path: "/playlists", element: <Playlists /> },
-            { path: "/playlists/add", element: <AddPlaylist /> },
-            { path: "/playlists/edit", element: <EditPlaylist /> },
-            { path: "/playlists/view/:id", element: <ViewPlaylist /> },
-            { path: "/lists/view/:id", element: <ViewListTracks/> },
+            { path: "/reports/songs", element: <PrivateRoute element={<SongsReport />} /> },
+            { path: "/reports/statistics", element: <PrivateRoute element={<Statistics />} /> },
+            { path: "/reports/trending", element: <PrivateRoute element={<Trending />} /> },
+            { path: "/reports/visitors", element: <PrivateRoute element={<Visitors />} /> },
 
-            {
-                path: "/playlists/addTrack", element: <AddTrackToPlaylist /> 
-            },
-
-            { path: "/reports/songs", element: <SongsReport /> },
-            { path: "/reports/statistics", element: <Statistics /> },
-            { path: "/reports/trending", element: <Trending /> },
-            { path: "/reports/visitors", element: <Visitors /> },
-
-            { path: "/songs/add", element: <AddSong /> },
-            { path: "/songs/detail", element: <SongDetail /> },
-            { path: "/trendingTrack/add", element: <AddTrendingTrack /> },
-            { path: "/trendingTrack/view", element: <ViewTrendingTracks /> },
-
-
-
-        ]
+            { path: "/songs/add", element: <PrivateRoute element={<AddSong />} /> },
+            { path: "/songs/detail", element: <PrivateRoute element={<SongDetail />} /> },
+            { path: "/trendingTrack/add", element: <PrivateRoute element={<AddTrendingTrack />} /> },
+            { path: "/trendingTrack/view", element: <PrivateRoute element={<ViewTrendingTracks />} /> },
+        ],
     },
     {
-        path:"/resetPassword-request",
-        element:<ResetPassword/>
+        path: "/resetPassword-request",
+        element: <ResetPassword />
     },
     {
-        path:"/reset-password/:token",
-        element:<ResetPasswordConfirm/>
+        path: "/reset-password/:token",
+        element: <ResetPasswordConfirm />
     },
+    {
+        path: "/register",
+        element: <Register />
+    },
+    {
+        path: "/login",
+        element: <Login />
+    },
+
 ])
 
 export default router

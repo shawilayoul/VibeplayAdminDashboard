@@ -10,10 +10,10 @@ const AppLayOUt = () => {
                 <Header />
             </div>
             <div className="flex justify-betwee w-full">
-                <div className="bg-blue-600 mt-16 z-5 h-screen fixed text-white">
+                <div className="bg-blue-600 mt-16 z-5 h-screen w-[18%] fixed text-white">
                     <SideBar />
                 </div>
-                <div className="p-2 w-[100%]  h-screen  ml-[18%] mt-[60px]">
+                <div className="p-2 w-[100%]  h-screen  ml-[18%] mt-[80px]">
                     <Outlet />
                 </div>
             </div>
