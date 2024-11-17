@@ -32,7 +32,7 @@ const Header = () => {
             {/* Left Side: Logo and App Name */}
             <div className="flex items-center space-x-3 mb-4 sm:mb-0">
                 <img src={FJUImage} alt="Logo" className="h-10 w-auto rounded-md shadow-md" />
-                <h1 className="text-2xl font-semibold text-white tracking-tight">FJU Christian Vibes</h1>
+                <h1 className="text-xl font-semibold text-white tracking-tight">FJU Christian Vibes</h1>
             </div>
 
             {/* Search Bar */}
@@ -65,16 +65,16 @@ const Header = () => {
 
                 {/* User Profile Dropdown */}
                 <div className="relative">
-                    {/* User icon with centered name */}
-                    <div className="relative w-9 h-9 rounded-full border-2 border-white cursor-pointer hover:ring-2 hover:ring-blue-300 transition-all">
+                    {/* User icon and username stacked vertically */}
+                    <div className="flex flex-col items-center">
                         <FaRegUser
                             onClick={() => setToggleProfile(!toggleProfile)}
-                            className="w-full h-full rounded-full"
+                            className="w-9 h-9 rounded-full border-2 border-white cursor-pointer hover:ring-2 hover:ring-blue-300 transition-all"
                         />
 
-                        {/* Centered name inside the user icon */}
-                        <div className="absolute inset-0 flex items-center justify-center text-white font-semibold">
-                            <p className="text-xs">{username ? username : 'Guest'}</p>
+                        {/* Username under the user icon */}
+                        <div className="mt-2 text-center text-xs text-white">
+                            <p>{username ? username : 'Guest'}</p>
                         </div>
                     </div>
 
