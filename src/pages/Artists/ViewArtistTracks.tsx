@@ -34,7 +34,7 @@ const ViewPlaylist = () => {
 
   const handleDelete = async(id:string)=>{
     try {
-      await axios.delete(`https://musicserver-uluy.onrender.com/artists/artistTracks/${id}`);
+      await axios.delete(`https://musicserver-uluy.onrender.com/artist-tracks/${id}`);
       setAllSongs((prevSongs) => prevSongs.filter(({id:songId}) => songId !== id));
       toast.success('Track deleted successfully!')
     } catch (error) {

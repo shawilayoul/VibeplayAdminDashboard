@@ -32,9 +32,6 @@ const Login = () => {
             const username = response.data.username.trim();  // Trim spaces from the response username
             const username2 = localStorage.getItem('username')?.trim();  // Trim spaces from localStorage
 
-            console.log('Username from response:', username);
-            console.log('Username from localStorage:', username2);
-
             // List of admin usernames
             const adminUsernames = ["Aochol", "Shawil Ayoul"];
 
@@ -103,8 +100,12 @@ const Login = () => {
                         </button>
                     </div>
                 </form>
-
-                <p className="mt-6 text-center text-sm text-gray-600">
+                <p className="text-center text-sm text-gray-600">
+                    <a href="/resetPassword-request" className="font-medium text-indigo-600 hover:text-indigo-500">
+                     Forgot Password
+                    </a>
+                </p>
+                <p className=" text-center text-sm text-gray-600">
                     Don't have an account?{' '}
                     <a href="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
                         Register here

@@ -65,13 +65,20 @@ const Header = () => {
 
                 {/* User Profile Dropdown */}
                 <div className="relative">
+                    {/* User icon with centered name */}
+                    <div className="relative w-9 h-9 rounded-full border-2 border-white cursor-pointer hover:ring-2 hover:ring-blue-300 transition-all">
+                        <FaRegUser
+                            onClick={() => setToggleProfile(!toggleProfile)}
+                            className="w-full h-full rounded-full"
+                        />
 
-                    <FaRegUser onClick={() => setToggleProfile(!toggleProfile)}
-                        className="w-9 h-9 rounded-full border-2 border-white cursor-pointer hover:ring-2 hover:ring-blue-300 transition-all"
+                        {/* Centered name inside the user icon */}
+                        <div className="absolute inset-0 flex items-center justify-center text-white font-semibold">
+                            <p className="text-xs">{username ? username : 'Guest'}</p>
+                        </div>
+                    </div>
 
-                    />
-                    <div className='text-center'>{username ? <p >{username}</p> : <p>Guest</p>}</div>
-
+                    {/* Profile options */}
                     {toggleProfile && (
                         <div className="absolute right-0 mt-4 w-48 bg-white shadow-lg rounded-md border border-gray-200">
                             <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
