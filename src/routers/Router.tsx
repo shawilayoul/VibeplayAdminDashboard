@@ -36,7 +36,7 @@ import ResetPasswordConfirm from "../pages/ResetPasswordConfirm"
 import Register from "../components/Register"
 import Login from "../components/Login"
 import PrivateRoute from "./PrivateRoute"
-
+import AccountDeletion from "../components/AccountDeletion"
 const router = createBrowserRouter([
     {
         path: "/",
@@ -98,6 +98,10 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login />
     },
+    {
+        path:"/account-deletion",
+        element:<AccountDeletion/>
+    }
 
 ])
 
