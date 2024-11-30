@@ -37,6 +37,7 @@ import Register from "../components/Register"
 import Login from "../components/Login"
 import PrivateRoute from "./PrivateRoute"
 import AccountDeletion from "../components/AccountDeletion"
+import PrivacyPolicy from "../components/PrivacyPolicy"
 const router = createBrowserRouter([
     {
         path: "/",
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
     {
         path:"/account-deletion",
         element:<AccountDeletion/>
+    },
+    {
+        path:"/privacy-policy",
+        element:<PrivacyPolicy/>
     }
 
 ])
