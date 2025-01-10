@@ -4,7 +4,7 @@ const AccountDeletion = () => {
         <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-6">
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full">
                 <h1 className="text-2xl font-semibold text-center text-gray-800 mb-4">
-                    Suppression de compte pour FJU Christian Vibes
+                    Suppression de compte pour VibePlay
                 </h1>
 
                 <p className="text-gray-700 mb-6">

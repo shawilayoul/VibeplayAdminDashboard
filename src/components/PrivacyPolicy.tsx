@@ -2,7 +2,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-6">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-4xl w-full">
-        <h1 className="text-3xl font-semibold text-center text-gray-800 mb-8">Privacy Policy for FJU Christian Vibes</h1>
+        <h1 className="text-3xl font-semibold text-center text-gray-800 mb-8">Privacy Policy for VibePlay</h1>
 
         <p className="text-center text-gray-500 mb-8">
           Effective Date: 30/11/2024
