@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import FJUImage from '../assets/FJU.jpg'; // Adjust the path accordingly
+import appIcon from '../assets/app-icon.jpg';
 import { FaRegMoon, FaRegBell, FaSearch, FaRegUser } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 
@@ -10,12 +10,10 @@ const Header = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Set up an interval to update the date/time every second
         const interval = setInterval(() => {
             setCurrentDateTime(new Date());
-        }, 1000); // Update every 1000ms (1 second)
+        }, 1000); 
 
-        // Clean up the interval when the component unmounts
         return () => clearInterval(interval);
     }, []);
 
@@ -31,8 +29,8 @@ const Header = () => {
         <header className="flex items-center justify-between p-4 bg-blue-600 z-50 text-white shadow-lg flex-wrap">
             {/* Left Side: Logo and App Name */}
             <div className="flex items-center space-x-3 mb-4 sm:mb-0">
-                <img src={FJUImage} alt="Logo" className="h-10 w-auto rounded-md shadow-md" />
-                <h1 className="text-xl font-semibold text-white tracking-tight">FJU Christian Vibes</h1>
+                <img src={appIcon} alt="Logo" className="h-10 w-auto rounded-md shadow-md" />
+                <h1 className="text-xl font-semibold text-white tracking-tight">VibePlay</h1>
             </div>
 
             {/* Search Bar */}
@@ -45,7 +43,6 @@ const Header = () => {
                 <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
             </div>
 
-            {/* Right Side: Controls (Search, Notifications, Profile, etc.) */}
             <div className="flex items-center space-x-6">
                 {/* Notifications Icon */}
                 <button className="relative">
