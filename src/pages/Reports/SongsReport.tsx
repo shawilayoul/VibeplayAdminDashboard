@@ -21,7 +21,7 @@ const mockSongs: Song[] = [
 ];
 
 const SongsReport = () => {
-  const [songs, setSongs] = useState<Song[]>(mockSongs);
+  //const [songs, setSongs] = useState<Song[]>(mockSongs);
   const [filter, setFilter] = useState<string>('');
 
   // Handle filter input change
@@ -30,7 +30,7 @@ const SongsReport = () => {
   };
 
   // Filter songs based on title, artist, or album
-  const filteredSongs = songs.filter(
+  const filteredSongs = mockSongs.filter(
     (song) =>
       song.title.toLowerCase().includes(filter.toLowerCase()) ||
       song.artist.toLowerCase().includes(filter.toLowerCase()) ||

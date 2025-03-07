@@ -13,7 +13,7 @@ interface PrivateRouteProps {
   const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
   const location = useLocation();
 
-  if (!isAuthenticated()) {
+ if (!isAuthenticated()) {
     // Redirect to login page if not authenticated
     return <Navigate to="/login" state={{ from: location }} />;
   }
