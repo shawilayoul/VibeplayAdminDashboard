@@ -32,9 +32,8 @@ The **admin dashboard** was built to support and manage the VibePlay mobile app 
 
 ## 🎯 Key Features
 
-- ✅ Add/edit/delete songs, albums, and artists  
-- 📁 Upload and manage audio files and images (via Firebase)  
-- 👤 Manage users and roles    
+- ✅ Add/edit/delete songs, playlists, and artists  
+- 📁 Upload and manage audio files and images (via Firebase)    
 - 🔒 Secured access for admins only  
 
 ---
