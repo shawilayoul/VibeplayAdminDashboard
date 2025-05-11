@@ -1,6 +1,6 @@
 # 🎧 VibePlay – Admin Dashboard
 
-VibePlay is a modern music streaming platform available on the Google Play Store.  
+VibePlay is a modern music streaming app available on the Google Play Store.  
 This repository contains the **admin dashboard**, a React-based web application that allows administrators to manage content, artists, tracks, playlists, and users.
 
 ---
