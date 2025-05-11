@@ -52,7 +52,6 @@ The backend powers both the mobile app and dashboard:
 
 ## 📂 Project Structure (Admin Dashboard)
 
-```bash
 src/
 ├── components/        # UI components (tables, forms, modals, etc.)
 ├── pages/             # Dashboard pages (e.g., Artists, Songs, Users)
