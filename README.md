@@ -50,16 +50,6 @@ The backend powers both the mobile app and dashboard:
 
 ---
 
-## 📂 Project Structure (Admin Dashboard)
-
-src/
-├── components/        # UI components (tables, forms, modals, etc.)
-├── pages/             # Dashboard pages (e.g., Artists, Songs, Users)
-├── services/          # API service handlers
-├── hooks/             # Custom hooks
-├── assets/            # Images, icons, etc.
-└── App.tsx            # Main app entry
-
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
