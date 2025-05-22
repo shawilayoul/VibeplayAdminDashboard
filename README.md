@@ -5,21 +5,21 @@ This repository contains the **admin dashboard**, a React-based web application 
 
 ---
 
-## 🚀 Overview
+## Overview
 
 The **admin dashboard** was built to support and manage the VibePlay mobile app developed in **React Native**. It enables seamless content management while ensuring performance and usability for admins and moderators.
 
 ---
 
-## 📱 VibePlay Mobile App
+##  VibePlay Mobile App
 
-🛒 **Available on Google Play Store**: [VibePlay](https://play.google.com/store/apps/details?id=com.fjuchristianvibes&hl=en_US)  
-🧠 Built with: **React Native** + **TypeScript**  
-🎵 Features: music playback, playlists, artist profiles, live streaming
+ **Available on Google Play Store**: [VibePlay](https://play.google.com/store/apps/details?id=com.fjuchristianvibes&hl=en_US)  
+Built with: **React Native** + **TypeScript**  
+Features: music playback, playlists, artist profiles, live streaming
 
 ---
 
-## 🛠️ Technologies Used (Admin Dashboard)
+## Technologies Used (Admin Dashboard)
 
 - **React**
 - **TypeScript**
@@ -30,15 +30,15 @@ The **admin dashboard** was built to support and manage the VibePlay mobile app 
 
 ---
 
-## 🎯 Key Features
+## Key Features
 
-- ✅ Add/edit/delete songs, playlists, and artists  
-- 📁 Upload and manage audio files and images (via Firebase)    
-- 🔒 Secured access for admins only  
+-  Add/edit/delete songs, playlists, and artists  
+-  Upload and manage audio files and images (via Firebase)    
+-  Secured access for admins only  
 
 ---
 
-## 🧱 Backend Overview
+## Backend Overview
 
 The backend powers both the mobile app and dashboard:
 
